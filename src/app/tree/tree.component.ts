@@ -18,7 +18,7 @@ export class TreeComponent implements OnChanges {
     this.render();
     if (change.selectedScenario
       && change.selectedScenario.currentValue !== null
-      && change.selectedScenario.currentValue.status !== 'hidden') {
+      && (change.selectedScenario.currentValue.status !== 'hidden' || change.selectedScenario.currentValue.side)) {
       this.panToSelected();
     }
   }
@@ -58,7 +58,7 @@ export class TreeComponent implements OnChanges {
               'border-color': '#3f51b5',
               'border-style': 'solid'
           })
-          .selector('node[status = "locked"]')
+          .selector('node[status = "hidden"][side]')
           .css({
             'content': ( ele ) => '#' + ele.data('id')
           })
@@ -110,15 +110,15 @@ export class TreeComponent implements OnChanges {
     this.checkSpecialCases();
   }
   private setNodeVisibility() {
-    this.cy.nodes('[status != "hidden"]')
+    this.cy.nodes('[status != "hidden"], [side]')
       .css({'visibility': 'visible'})
       .selectify();
-    this.cy.nodes('[status = "hidden"]')
+    this.cy.nodes('[status = "hidden"][!side]')
       .css({'visibility': 'hidden'});
   }
   private setEdgeVisibility() {
     // Set edges from non-complete nodes to hidden
-    this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"], [status = "locked"]')
+    this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]')
       .outgoers('edge')
       .css({'visibility': 'hidden'});
     // Set unlock edges from complete nodes to visible
@@ -126,7 +126,7 @@ export class TreeComponent implements OnChanges {
       .outgoers('edge[type = "unlocks"]')
       .css({'visibility': 'visible'});
     // Set requiredby edges from visible nodes to visible
-    this.cy.nodes('[status != "hidden"]')
+    this.cy.nodes('[status != "hidden"], [side]')
       .outgoers('edge[type = "requiredby"][target != "31"][target != "26"]')
       .css({'visibility': 'visible'});
     // Set requiredby edges from complete nodes to hidden (requirement met)
@@ -137,7 +137,7 @@ export class TreeComponent implements OnChanges {
     this.cy.nodes('[status = "complete"]')
       .outgoers('edge[type = "blocks"][target != "27"][target != "31"][target != "33"]')
       .css({'visibility': 'visible'});
-    // Set blocks edges to complete nodes to hidden (completed nodes cannot be blocked)
+    // Set blocks edges to complete nodes to hidden (completed nodes cannot be bside)
     this.cy.nodes('[status = "complete"]')
       .incomers('edge[type = "blocks"]')
       .css({'visibility': 'hidden'});
@@ -148,7 +148,7 @@ export class TreeComponent implements OnChanges {
   }
   private colorScenarios() {
     // Incomplete nodes are black
-    this.cy.nodes('[status = "incomplete"], [status = "locked"]').css({
+    this.cy.nodes('[status = "incomplete"], [side]').css({
       'color': '#000',
       'background-color': '#000',
       'border-width': '0px'});
@@ -168,7 +168,7 @@ export class TreeComponent implements OnChanges {
         'background-color': '#ff4081',
         'border-width': '0px'
     });
-    // Scenarios blocked by other scenarios being incomplete are grey
+    // Scenarios bside by other scenarios being incomplete are grey
     this.cy.nodes('[status != "complete"]')
       .outgoers('edge[type = "requiredby"][target != "31"][target != "26"]')
       .targets('node[status != "complete"]')
@@ -176,7 +176,7 @@ export class TreeComponent implements OnChanges {
         'background-color': '#c9c9c9',
         'border-width': '0px'
       });
-    // Scenarios blocked by other scenarios being complete are red
+    // Scenarios bside by other scenarios being complete are red
     this.cy.nodes('[status = "complete"]')
       .outgoers('edge[type = "blocks"][target != "27"][target != "31"][target != "33"]')
       .targets('node[status != "complete"]')
