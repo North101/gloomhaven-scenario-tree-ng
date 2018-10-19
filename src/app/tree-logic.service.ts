@@ -22,7 +22,7 @@ export class TreeLogicService {
     scenarios.edges.filter(edge => (edge.data.source === parentId && (edge.data.type === 'unlocks' || edge.data.type === 'linksto')))
       .forEach(edge => {
         let scenarioIndex = scenarios.nodes.findIndex(scenario => scenario.data.id === edge.data.target);
-        if (scenarios.nodes[scenarioIndex].data.status === 'hidden' || scenarios.nodes[scenarioIndex].data.status === 'locked') {
+        if (scenarios.nodes[scenarioIndex].data.status === 'hidden') {
           scenarios.nodes[scenarioIndex].data.status = 'incomplete';
         }
       })
@@ -39,11 +39,7 @@ export class TreeLogicService {
         });
         if (typeof keepActive === 'undefined') {
           if (scenarios.nodes[childScenarioIndex].data.status === 'incomplete') {
-            if (parseInt(scenarios.nodes[childScenarioIndex].data.id) <= 51) {
-              scenarios.nodes[childScenarioIndex].data.status = 'hidden';
-            } else {
-              scenarios.nodes[childScenarioIndex].data.status = 'locked';
-            }
+            scenarios.nodes[childScenarioIndex].data.status = 'hidden';
             this.hideChildScenarios(scenarios, scenarios.nodes[childScenarioIndex].id);
           }
         }

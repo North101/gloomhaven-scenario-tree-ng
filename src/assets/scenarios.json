@@ -953,7 +953,8 @@
                 "id": "52",
                 "name": "#52 Noxious Cellar",
                 "pages": [68, 69],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -967,7 +968,8 @@
                 "id": "53",
                 "name": "#53 Crypt Basement",
                 "pages": [69, 70],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "31": {
@@ -986,7 +988,8 @@
                 "id": "54",
                 "name": "#54 Palace of Ice",
                 "pages": [71],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "25": {
@@ -1005,7 +1008,8 @@
                 "id": "55",
                 "name": "#55 Foggy Thicket",
                 "pages": [72],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1019,7 +1023,8 @@
                 "id": "56",
                 "name": "#56 Bandit's Wood",
                 "pages": [73],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "45": {
@@ -1027,6 +1032,9 @@
                         "description": "Random Item Design"
                     }
                 }
+=======
+                "notes": ""
+>>>>>>> ef3e3b5... change locked status to hidden
             },
             "position": {
                 "x": -800,
@@ -1038,7 +1046,8 @@
                 "id": "57",
                 "name": "#57 Investigation",
                 "pages": [74],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "22": {
@@ -1061,7 +1070,8 @@
                 "id": "58",
                 "name": "#58 Bloody Shack",
                 "pages": [75],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1075,7 +1085,8 @@
                 "id": "59",
                 "name": "#59 Forgotten Grove",
                 "pages": [76],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1089,7 +1100,8 @@
                 "id": "60",
                 "name": "#60 Alchemy Lab",
                 "pages": [77],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1103,7 +1115,8 @@
                 "id": "61",
                 "name": "#61 Fading Lighthouse",
                 "pages": [78, 79],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1117,7 +1130,8 @@
                 "id": "62",
                 "name": "#62 Pit of Souls",
                 "pages": [80],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "59": {
@@ -1137,7 +1151,8 @@
                 "id": "63",
                 "name": "#63 Magma Pit",
                 "pages": [81],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "12": {
@@ -1156,7 +1171,8 @@
                 "id": "64",
                 "name": "#64 Under Water Lagoon",
                 "pages": [82],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "09": {
@@ -1175,7 +1191,8 @@
                 "id": "65",
                 "name": "#65 Sulfur Mine",
                 "pages": [83, 84],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1189,7 +1206,8 @@
                 "id": "66",
                 "name": "#66 Clockwork Cove",
                 "pages": [84, 85],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "36": {
@@ -1212,7 +1230,8 @@
                 "id": "67",
                 "name": "#67 Arcane Library",
                 "pages": [86],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "14": {
@@ -1231,7 +1250,8 @@
                 "id": "68",
                 "name": "#68 Toxic Moor",
                 "pages": [87],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "33": {
@@ -1250,7 +1270,8 @@
                 "id": "69",
                 "name": "#69 Well of the Unfortunate",
                 "pages": [88],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1264,7 +1285,8 @@
                 "id": "70",
                 "name": "#70 Chained Isle",
                 "pages": [89, 90],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "06": {
@@ -1283,7 +1305,8 @@
                 "id": "71",
                 "name": "#71 Windswept Highlands",
                 "pages": [90, 91],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1299,7 +1322,8 @@
                 "id": "72",
                 "name": "#72 Oozing Grove",
                 "pages": [92],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1313,7 +1337,8 @@
                 "id": "73",
                 "name": "#73 Rockslide Ridge",
                 "pages": [93],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1327,7 +1352,8 @@
                 "id": "76",
                 "name": "#76 Harrower Hive",
                 "pages": [96, 97],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "75": {
@@ -1346,7 +1372,8 @@
                 "id": "77",
                 "name": "#77 Vault of Secrets",
                 "pages": [97, 98],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1361,7 +1388,8 @@
                 "id": "74",
                 "name": "#74 Merchant Ship",
                 "pages": [94],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "20": {
@@ -1380,7 +1408,8 @@
                 "id": "75",
                 "name": "#75 Overgrown Graveyard",
                 "pages": [95],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "53": {
@@ -1399,7 +1428,8 @@
                 "id": "78",
                 "name": "#78 Sacrifice Pit",
                 "pages": [99],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1413,7 +1443,8 @@
                 "id": "79",
                 "name": "#79 Lost Temple",
                 "pages": [100, 101],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "52": {
@@ -1432,7 +1463,8 @@
                 "id": "81",
                 "name": "#81 Temple of the Eclipse",
                 "pages": [103],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "68": {
@@ -1451,7 +1483,8 @@
                 "id": "83",
                 "name": "#83 Shadows Within",
                 "pages": [105],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1465,7 +1498,8 @@
                 "id": "84",
                 "name": "#84 Crystalline Cave",
                 "pages": [106],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "42": {
@@ -1484,7 +1518,8 @@
                 "id": "86",
                 "name": "#86 Harried Village",
                 "pages": [108, 109],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1498,7 +1533,8 @@
                 "id": "87",
                 "name": "#87 Corrupted Cove",
                 "pages": [110],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "40": {
@@ -1517,7 +1553,8 @@
                 "id": "88",
                 "name": "#88 Plane of Water",
                 "pages": [111],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "37": {
@@ -1540,7 +1577,8 @@
                 "id": "89",
                 "name": "#89 Syndicate Hideout",
                 "pages": [112],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "43": {
@@ -1567,7 +1605,8 @@
                 "id": "91",
                 "name": "#91 Wild Melee",
                 "pages": [114],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1581,7 +1620,8 @@
                 "id": "92",
                 "name": "#92 Back Alley Brawl",
                 "pages": [115],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1595,7 +1635,8 @@
                 "id": "93",
                 "name": "#93 Sunken Vessel",
                 "pages": [116],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "54": {
@@ -1614,7 +1655,8 @@
                 "id": "94",
                 "name": "#94 Vermling Nest",
                 "pages": [117],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1628,7 +1670,8 @@
                 "id": "95",
                 "name": "#95 Payment Due",
                 "pages": [118, 119],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1643,7 +1686,8 @@
                 "id": "80",
                 "name": "#80 Vigil Keep",
                 "pages": [101, 102],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1657,7 +1701,8 @@
                 "id": "82",
                 "name": "#82 Burning Mountain",
                 "pages": [104],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "62": {
@@ -1676,7 +1721,8 @@
                 "id": "85",
                 "name": "#85 Sun Temple",
                 "pages": [107, 108],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {}
             },
@@ -1690,7 +1736,8 @@
                 "id": "90",
                 "name": "#90 Demonic Rift",
                 "pages": [113],
-                "status": "locked",
+                "status": "hidden",
+                "side": true,
                 "notes": "",
                 "treasure": {
                     "19": {
