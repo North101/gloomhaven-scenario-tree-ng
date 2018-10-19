@@ -27,6 +27,7 @@ export class AssetService {
 
     let currentNodes = cloneDeep(this.defaultScenariosJSON).nodes.map((node, index) => {
       let savedNode = savedScenarios.nodes[node.data.id];
+      if (!savedNode) return node;
 
       /* Logic to allow old saved json format to work */
       if (typeof savedScenarios.version === 'undefined') {
@@ -34,8 +35,8 @@ export class AssetService {
         savedNode.notes = savedNode.data.notes;
         savedNode.x = savedNode.position.x;
         savedNode.y = savedNode.position.y;
-        if (parseInt(savedNode.data.id) > 51 && (savedNode.status === 'hidden' || savedNode.data.locked == 'true') ) {
-          savedNode.status = 'locked';
+        if (savedNode.data.locked == 'true') {
+          savedNode.status = 'hidden';
         }
       }
 

@@ -40,13 +40,11 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
       this.scenario.id = this.selectedScenario.id;
       this.scenario.status = this.selectedScenario.status || "incomplete";
       this.scenario.notes = this.selectedScenario.notes || "";
+      this.scenario.side = this.selectedScenario.side || false;
     }
   }
-  public isSideScenario() {
-    return (parseInt(this.scenario.id) > 51);
-  }
   public showScenarioName(node) {
-    return (node.data.status !== 'locked' && node.data.status !== 'hidden');
+    return (!node.data.side && node.data.status !== 'hidden');
   }
   public handleStatusChange(status) {
     this.scenario.status = status;
@@ -81,7 +79,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     this.saveScenarioData(false);
   }
   public lockScenario() {
-    this.scenario.status = 'locked';
+    this.scenario.status = 'hidden';
     this.saveScenarioData(false);
   }
   public unhideScenario() {
