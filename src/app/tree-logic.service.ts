@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import * as cloneDeep from 'lodash.clonedeep';
+import { ScenarioData, ScenarioNodeData } from './asset.service';
+
+
 @Injectable()
 export class TreeLogicService {
 
   constructor() { }
 
-  public updateScenario(originalScenarios, updatedScenario) : any {
+  public updateScenario(originalScenarios: ScenarioData, updatedScenario: ScenarioNodeData) : ScenarioData {
     let scenarios = cloneDeep(originalScenarios);
     let scenarioIndex = scenarios.nodes.findIndex(scenario => scenario.data.id === updatedScenario.id);
     if (updatedScenario.status === 'complete') {
@@ -18,7 +21,7 @@ export class TreeLogicService {
     scenarios.nodes[scenarioIndex].data.notes = updatedScenario.notes;
     return scenarios;
   }
-  private showChildScenarios(scenarios, parentId) {
+  private showChildScenarios(scenarios: ScenarioData, parentId: string) {
     scenarios.edges.filter(edge => (edge.data.source === parentId && (edge.data.type === 'unlocks' || edge.data.type === 'linksto')))
       .forEach(edge => {
         let scenarioIndex = scenarios.nodes.findIndex(scenario => scenario.data.id === edge.data.target);
@@ -27,7 +30,7 @@ export class TreeLogicService {
         }
       })
   }
-  private hideChildScenarios(scenarios, parentId) {
+  private hideChildScenarios(scenarios: ScenarioData, parentId: string) {
     scenarios.edges
       .filter(edge => (edge.data.source === parentId && (edge.data.type === 'unlocks' || edge.data.type === 'linksto')))
       .forEach(childEdge => {
@@ -44,7 +47,7 @@ export class TreeLogicService {
             } else {
               scenarios.nodes[childScenarioIndex].data.status = 'locked';
             }
-            this.hideChildScenarios(scenarios, scenarios.nodes[childScenarioIndex].id);
+            this.hideChildScenarios(scenarios, scenarios.nodes[childScenarioIndex].data.id);
           }
         }
       })

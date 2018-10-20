@@ -4,6 +4,14 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
+import { ScenarioData, ScenarioNode, ScenarioNodeData } from '../asset.service';
+
+interface ScenarioInfo {
+  id: string;
+  status: string;
+  notes: string;
+  side: boolean;
+}
 
 @Component({
   selector: 'app-scenario-info',
@@ -11,17 +19,20 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./scenario-info.component.css']
 })
 export class ScenarioInfoComponent implements OnInit, OnChanges {
-  @Input()  selectedScenario: any;
-  @Input()  scenarios: any;
-  @Output() selectScenario = new EventEmitter();
-  @Output() updateScenario = new EventEmitter<any>();
+  @Input()  selectedScenario: ScenarioNodeData;
+  @Input()  scenarios: ScenarioData;
+  @Output() selectScenario = new EventEmitter<ScenarioInfo>();
+  @Output() updateScenario = new EventEmitter<ScenarioInfo>();
   filteredScenarios: Observable<any[]>;
   scenarioCtrl = new FormControl();
-  public scenario = {
+
+  public scenario: ScenarioInfo = {
     id: '',
     status: 'incomplete',
-    notes: ''
+    notes: '',
+    side: false,
   };
+
   constructor(
     public dialog: MatDialog,
     private snackBar: MatSnackBar
@@ -48,7 +59,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   public showScenarioName(node) {
     return (node.data.status !== 'locked' && node.data.status !== 'hidden');
   }
-  public handleStatusChange(status) {
+  public handleStatusChange(status: string) {
     this.scenario.status = status;
     this.saveScenarioData(false);
   }
@@ -92,7 +103,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     this.scenario.status = 'hidden';
     this.saveScenarioData(false);
   }
-  public displayFn(scenario) {
+  public displayFn(scenario: ScenarioNode | null) {
     return scenario ? scenario.data.name : undefined;
   }
   private filterScenarios(value: string) {
@@ -114,7 +125,8 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   `]
 })
 export class ScenarioInfoDialog {
-  public selectedScenario: any;
+  public selectedScenario: ScenarioNodeData;
+
   constructor(
     public dialogRef: MatDialogRef<ScenarioInfoDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any,

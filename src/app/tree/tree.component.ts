@@ -1,5 +1,7 @@
 import { Component, OnChanges, ElementRef, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
 import * as cytoscape from 'cytoscape';
+import { ScenarioData, ScenarioNode, ScenarioNodeData } from '../asset.service';
+
 @Component({
   selector: 'app-tree',
   template: '<div id="cy" #cy class="flex-item"></div>',
@@ -7,8 +9,8 @@ import * as cytoscape from 'cytoscape';
 })
 export class TreeComponent implements OnChanges {
   @Input()  elements: any;
-  @Input()  selectedScenario: any;
-  @Output() selectScenario = new EventEmitter();
+  @Input()  selectedScenario: ScenarioNodeData;
+  @Output() selectScenario = new EventEmitter<ScenarioNodeData>();
   @ViewChild('cy') cyEl;
   private initialLoad: boolean = true;
   private cy: any;
